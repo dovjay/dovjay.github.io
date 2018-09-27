@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clockies</title>
+  <script type="text/javascript" src="script.js"></script>
+  <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body onload="updateClock(); setInterval('updateClock()', 1000)">
+  <div>
+    <div id="cover">
+        <h1>Nokai</h1>
+        <span id="clock">&nbsp;</span>
+        <div id="navigation">
+          <div id="left">
+            <button id="continue"> - </button>
+            <button id="call">call</button>
+          </div>
+          <div id="center">
+            <button id="l"> < </button>
+            <button id="r"> > </button>
+          </div>
+          <div id="right">
+            <button id="back"> - </button>
+            <button id="reject">reject</button>
+          </div>
+        </div>
+        <div id="button">
+          <button id="1">1</button><button id="2">2</button><button id="3">3</button>
+          <button id="4">4</button><button id="5">5</button><button id="6">6</button>
+          <button id="7">7</button><button id="8">8</button><button id="9">9</button>
+          <button id="left-symbol">*</button><button id="0">0</button><button id="right-symbol">#</button>
+        </div>
+        <span id="speaker">... ... ...</span>
+    </div>
+  </div>
+  <button id="tombol">click me!</button>
+  <div id="tes"></div>
+  <script>
+    var button = document.getElementById("tombol");
+    button.addEventListener("click", tes());
+    function tes() {
+      document.getElementById("tes").innerHTML = "Hello World!";
+    }
+  </script>
+</body>
+</html>
