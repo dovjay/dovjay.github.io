@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tipping Service</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="script.js" type="text/javascript" defer></script>
+</head>
+<body>
+  <div id="container">
+    <h1>Kalkulator Tips</h1>
+    <div id="calculator">
+      <form>
+        <p>Berapa tagihanmu?</p>
+        Rp <input id="tagihan" type="text" placeholder="Jumlah Tagihan">
+        <p>Bagaimana pelayananmu?</p>
+        <select id="kualitas">
+          <option disabled selected value="0">-- Pilih Salah Satu --</option>
+          <option value="0.3">30% - Luar Biasa</option>
+          <option value="0.2">20% - Mantap</option>
+          <option value="0.15">15% - Biasa aja</option>
+          <option value="0.1">10% - Jelek</option>
+          <option value="0.05">5% - Payah</option>
+        </select>
+      </form>
+      <p>Berapa orang yang ikut?</p>
+      <input type="text" id="jumlah-orang" placeholder="Jumlah Orang"> Orang
+      <button type="button" id="calculate">Calculate!</button>
+    </div>
+    <div id="total-tip">
+      <sup>Rp</sup><span id="tip">0.00</span>
+      <small id="each">untuk tiap orang</small>
+    </div>
+  </div>
+</body>
+</html>
