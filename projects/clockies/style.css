@@ -17,14 +17,14 @@ div {
   background-color: slategray;
   border: 10px solid black;
   border-radius: 20px;
-  padding: 20px 80px;
+  padding: 20px 60px;
 }
 #clock {
   color: green;
   background-color: whitesmoke;
   border: 7px solid black;
   border-radius: 20px;
-  padding: 100px;
+  padding: 80px;
   font-size: 2em;
 }
 #navigation {
@@ -33,7 +33,7 @@ div {
   display: grid;
   grid-gap: 30px;
   grid-template-columns: repeat(3, 100px);
-  height: 200px;
+  height: 240px;
 }
 #navigation #left button, #navigation #right button {
   background-color: gray;
