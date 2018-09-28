@@ -7,10 +7,22 @@ body {
   width: 80%;
   text-align: center;
   margin: auto;
+  display: flex;
+}
+
+#left {
+  padding-top: 100px;
+  width: 60%;
+  border-right: 3px solid black;
+}
+
+#right {
+  width: 40%;
 }
 
 h1 {
   font-size: 3em;
+  padding: 5px;
   border: 10px solid black;
   border-radius: 20px;
   margin: auto;
@@ -57,7 +69,7 @@ p#id-02 {
 
 li {
   list-style: none;
-  width: 45%;
+  width: 90%;
   margin: 10px auto;
   padding: 10px 20px;
   border: 3px solid black;
@@ -82,4 +94,38 @@ li {
 .done {
   background-color: lawngreen !important;
   color: rgb(9, 107, 0);
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 0.8em;
+  }
+  #container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+    border: 5px solid black;
+  }
+
+  #left {
+    border: none;
+    margin: auto;
+  }
+
+  #input {
+    width: 100%;
+  }
+
+  #button {
+    margin-top: 10px;
+    position: relative;
+    left: 5px;
+  }
+
+  #right {
+    margin: auto;
+  }
 }

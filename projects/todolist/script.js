@@ -18,8 +18,20 @@ function addTask() {
   var theText = document.createTextNode(inputText.value);
   li.appendChild(theText);
 
+  var counter = 1;
+  var savedInput = li.innerHTML;
   function done() {
-    li.classList.toggle("done");
+    if (counter % 2 != 0) {
+      li.classList.toggle("done");
+      li.innerHTML = '<i class="fa fa-check"> </i>&nbsp;&nbsp;'   + savedInput;
+      li.appendChild(deleteButton);
+      counter++;
+    } else {
+      li.classList.toggle("done");
+      li.innerHTML = savedInput;
+      li.appendChild(deleteButton);
+      counter++;
+    }
   }
   function pressed() {
     li.setAttribute('style', 'top: 1px;');
@@ -35,7 +47,7 @@ function addTask() {
   var close = document.createElement('i');
   close.setAttribute('class', 'fa fa-trash-o');
   close.style.fontSize = '1.8em';
-  deleteButton.setAttribute('class', 'delete-button')
+  deleteButton.setAttribute('class', 'delete-button');
   deleteButton.appendChild(close);
   deleteButton.addEventListener("click", deleteList);
 
