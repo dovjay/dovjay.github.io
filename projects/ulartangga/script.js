@@ -7,31 +7,31 @@ var mainMenu = document.getElementById('main-menu');
 var maxPlayer = 0;
 
 button1player.addEventListener("click", function() {
-  mainMenu.style.display = "none";
   maxPlayer = 1;
   makePlayer(maxPlayer);
   positionDisplay();
+  $("#main-menu").fadeOut("slow");
 });
 
 button2player.addEventListener("click", function() {
-  mainMenu.style.display = "none";
   maxPlayer = 2;
   makePlayer(maxPlayer);
   positionDisplay();
+  $("#main-menu").fadeOut("slow");
 });
 
 button3player.addEventListener("click", function() {
-  mainMenu.style.display = "none";
   maxPlayer = 3;
   makePlayer(maxPlayer);
   positionDisplay();
+  $("#main-menu").fadeOut("slow");
 });
 
 button4player.addEventListener("click", function() {
-  mainMenu.style.display = "none";
   maxPlayer = 4;
   makePlayer(maxPlayer);
   positionDisplay();
+  $("#main-menu").fadeOut("slow");
 });
 
 // make maxPlayer and place them to the first position
@@ -84,10 +84,11 @@ function positionDisplay() {
   var display = document.getElementById('position-display');
   display.innerHTML = "";
   for (let i=0; i<maxPlayer; i++) {
-    var para = document.createElement('p');
+    var p = document.createElement('p');
+    p.setAttribute('id', `display-player${i+1}`);
     var text = document.createTextNode(`Player ${i+1} position: `+ playerPosition[i].innerHTML);
-    para.appendChild(text);
-    display.appendChild(para);
+    p.appendChild(text);
+    display.appendChild(p);
   }
 }
 

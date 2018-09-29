@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js" type="text/javascript" defer></script>
   <script src="gameplay.js" type="text/javascript" defer></script>
   <meta charset="UTF-8">
@@ -11,24 +12,25 @@
 </head>
 <body>
   <div id="main-menu">
-    <h1>Selamat Datang di Ular Tangga!</h1>
-    <h2>Silahkan pilih jumlah pemain</h2>
+    <h1>Ini Game Ular Tangga</h1>
+    <h2>Silahkan pilih jumlah pemain!</h2>
     <div class="pemain">
       <button id="p1">1</button>
       <button id="p2">2</button>
       <button id="p3">3</button>
       <button id="p4">4</button>
     </div>
+    <h4>Created by Dovan Sanjaya</h4>
   </div>
   <div id="the-game">
     <div id="container">
-      <h1>Ini Ular Tangga</h1>
+      <h1 id="main-title">Ini Ular Tangga</h1>
       <div id="board"></div>
     </div>
     <div id="dice">
-      <p id="instruction">Player 1, Please roll the dice!</p>
+      <h2 id="instruction">Player 1, Please roll the dice!</h2>
       <button id="dice-button">Roll</button>
-      <p id="p-go"></p>
+      <h3 id="p-go"></h3>
       <div id="position-display"></div>
     </div>
   </div>
