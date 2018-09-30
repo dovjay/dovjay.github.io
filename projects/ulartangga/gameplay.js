@@ -153,7 +153,7 @@ function playerGo(walkFor) {
         break;
     }
   }
-  // ladderAndSnake();
+  ladderAndSnake();
 }
 
 // make playerTurn function
