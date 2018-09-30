@@ -213,5 +213,6 @@ body {
 
   #dice {
     left: 0;
+    width: 100%;
   }
 }
