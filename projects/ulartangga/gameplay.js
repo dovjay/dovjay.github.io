@@ -1,34 +1,58 @@
-// make the dice button
+// make the dice button and information for player
 var dice = document.getElementById('dice');
 var diceButton = document.getElementById('dice-button');
 
 //make roll dice function
-function rollTheDice(num) {
+function rollTheDice() {
   var go = Math.ceil(Math.random() * 6);
-  num += go;
-  if (num == 1) {
-    var youGo = document.createTextNode(`Player ${player} can go for ${num} tile`);
-  } else {
-    var youGo = document.createTextNode(`Player ${player} can go for ${num} tiles`);
+
+  // make a function to play Dice Roll Video
+  function playDiceVideo() {
+      document.getElementById("dice-video").style.display = "grid";
+      document.getElementById(`player${player}`).style.display = "none";
+      document.getElementById(`dice${go}`).style.display = "inline";
+      document.getElementById(`dice${go}`).play();
+      diceButton.disabled = true;
+      setTimeout(hideDiv, 2000);
+      function hideDiv() {
+          document.getElementById("dice-video").style.display = "none";
+          document.getElementById(`player${player}`).style.display = "inline";
+          document.getElementById(`dice${go}`).style.display = "none";
+          diceButton.disabled = false;
+          playerGo(go);
+          positionDisplay();
+          if (!diceIsSix()) {
+            player = playerTurn();
+          } else {
+            alert(`Player ${player} just got six! Roll again!`);
+            rollTheDice();
+          }
+      }
   }
+  playDiceVideo();
+
   var p = document.getElementById('p-go');
   var instruction = document.getElementById('instruction');
+
   if (player+1 > maxPlayer) {
     var instructionText = document.createTextNode(`Player 1, Please roll the dice!`);
   } else {
     var instructionText = document.createTextNode(`Player ${player+1}, Please roll the dice!`);
   }
+
   p.innerHTML = '';
   p.appendChild(youGo);
   instruction.innerHTML = '';
   instruction.appendChild(instructionText);
   dice.appendChild(p);
-  if (go == 6 && num <= 12) {
-    alert(`Player ${player} just got six! Roll again!`);
-    rollTheDice(num);
+
+  function diceIsSix() {
+    if (go == 6) {
+      return true;
+    } else {
+      return false;
+    }
   }
-  playerGo(go);
-  positionDisplay();
 }
 
 function playerGo(walkFor) {
@@ -149,9 +173,9 @@ function checkWinner() {
   if (playerPosition[player-1].innerHTML == 100) {
     if (maxPlayer > 2) {
       maxPlayer--;
-      alert(`Player ${player} has won the game!`);
       playerPosition.splice(player-1, 1);
     } else {
+      alert(`Player ${player} has won the game!`);
       var restart = confirm("Want to restart the game?");
       if (restart) {
         location.reload();
@@ -164,8 +188,6 @@ function checkWinner() {
 
 // add the function to the dice button
 diceButton.addEventListener("click", function() {
-  var num = 0;
-  rollTheDice(num);
+  rollTheDice();
   checkWinner();
-  player = playerTurn();
 });

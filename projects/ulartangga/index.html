@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" href="style.css" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -10,6 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Ular Tangga</title>
 </head>
+
 <body>
   <div id="main-menu">
     <h1>Ini Game Ular Tangga</h1>
@@ -23,16 +25,44 @@
     <h4>Created by Dovan Sanjaya</h4>
   </div>
   <div id="the-game">
-    <div id="container">
+    <div id="main-board">
       <h1 id="main-title">Ini Ular Tangga</h1>
-      <div id="board"></div>
+      <div id="container">
+        <div id="dice-video">
+          <video id="dice1" width="320" height="176">
+            <source src="videos/dice1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <video id="dice2" width="320" height="176">
+            <source src="videos/dice2.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <video id="dice3" width="320" height="176">
+            <source src="videos/dice3.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <video id="dice4" width="320" height="176">
+            <source src="videos/dice4.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <video id="dice5" width="320" height="176">
+            <source src="videos/dice5.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <video id="dice6" width="320" height="176">
+            <source src="videos/dice6.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div id="board"></div>
+      </div>
     </div>
     <div id="dice">
       <h2 id="instruction">Player 1, Please roll the dice!</h2>
       <button id="dice-button">Roll</button>
-      <h3 id="p-go"></h3>
       <div id="position-display"></div>
     </div>
   </div>
 </body>
+
 </html>
