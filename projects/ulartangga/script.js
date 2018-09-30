@@ -43,10 +43,10 @@ function makePlayer(maxPlayer) {
 
     var pos = document.createElement('span');
     pos.setAttribute('id', `pos${i+1}`);
-    pos.appendChild(document.createTextNode('93'));
+    pos.appendChild(document.createTextNode('1'));
     user.appendChild(pos);
     playerPosition.push(pos);
-    boardChilds['7'].appendChild(user);
+    boardChilds['90'].appendChild(user);
   }
 }
 
