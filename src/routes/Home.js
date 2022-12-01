@@ -1,0 +1,45 @@
+function Home() {
+    return (
+        <div className="w-3/4 mx-auto">
+            <section className="flex justify-between">
+                <div className="-mt-40 w-5/12 grid content-center">
+                    <h1 
+                        className="font-serif max-w-fit text-7xl font-bold text-transparent bg-clip-text leading-snug bg-gradient-to-r from-orange-300 via-purple-500 to-cyan-300"
+                    >
+                        Hi. I'm Dovjay. <br/>
+                        A Developer.
+                    </h1>
+                    <p className="text-white text-xl tracking-wide leading-relaxed mt-8">
+                        Enjoy working in Front-End with <span className="font-bold">ReactJS</span>, 
+                        prototyping many games with <span className="font-bold">Unity</span>, 
+                        and designing UI/UX with <span className="font-bold">Figma</span>.
+                    </p>
+                </div>
+                <div className="w-6/12">
+                    <div className="flex justify-between">
+                        <div className="bg-gradient-to-b from-orange-300 to-pink-400 w-1/6 aspect-square rounded-xl"></div>
+                        <div className="bg-gradient-to-b from-purple-400 to-cyan-300 w-1/6 aspect-square rounded-xl"></div>
+                    </div>
+                    <div className="mx-auto w-4/6 aspect-square bg-slate-800/50 rounded-2xl relative overflow-hidden">
+                        <div className="w-2/3 aspect-[3/2] bg-white rounded-ellipse absolute m-auto inset-0">
+                            <div className="w-1/4 bg-black aspect-square rounded-full absolute m-auto inset-0"></div>
+                        </div>
+                    </div>
+                    <div className="flex justify-between">
+                        <div className="bg-gradient-to-b from-pink-300 to-purple-400 w-1/6 aspect-square rounded-xl"></div>
+                        <div className="bg-gradient-to-b from-orange-300 to-pink-400 w-1/6 aspect-square rounded-xl"></div>
+                    </div>
+                    <div className="flex">
+                        <div className="opacity-0 w-1/6 aspect-square"></div>
+                        <div className="bg-gradient-to-b from-purple-400 to-cyan-300 w-1/6 aspect-square rounded-xl"></div>
+                    </div>
+                </div>
+            </section>
+            <section className="h-40 my-40 bg-slate-800">
+                <h1 className="text-4xl text-white text-center">This should be the place of Works</h1>
+            </section>
+        </div>
+    );
+}
+
+export default Home;
