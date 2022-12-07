@@ -1,6 +1,14 @@
+import ProjectCard from '../components/ProjectCard';
+
+import projectCoverA from '../img/25+5_clock.png';
+import projectCoverB from '../img/calculator.png';
+import projectCoverC from '../img/drumpads.png';
+import projectCoverD from '../img/markdownpreviewer.png';
+import projectCoverE from '../img/randomquotegenerator.png';
+
 function Home() {
     return (
-        <div className="w-3/4 mx-auto">
+        <div className="w-5/6 mx-auto">
             <section className="flex justify-between">
                 <div className="-mt-40 w-5/12 grid content-center">
                     <h1 
@@ -10,7 +18,7 @@ function Home() {
                         A Developer.
                     </h1>
                     <p className="text-white text-xl tracking-wide leading-relaxed mt-8">
-                        Enjoy working in Front-End with <span className="font-bold">ReactJS</span>, 
+                        Enjoy working in Front-End with <span className="font-bold">React</span>, 
                         prototyping many games with <span className="font-bold">Unity</span>, 
                         and designing UI/UX with <span className="font-bold">Figma</span>.
                     </p>
@@ -35,11 +43,46 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className="h-40 my-40 bg-slate-800">
-                <h1 className="text-4xl text-white text-center">This should be the place of Works</h1>
+            <section className="flex flex-col my-20 gap-10 h-fit">
+                {works.map(project => (
+                    <ProjectCard project={project} />
+                ))}
             </section>
         </div>
     );
 }
+
+const works = [
+    {
+        projectName: "25 + 5 Clock",
+        projectURL: "https://codepen.io/dovjay/pen/XWYoxGa",
+        organization: "FCC Front End Challenge",
+        projectThumbnail: projectCoverA
+    },
+    {
+        projectName: "Calculator",
+        projectURL: "https://codepen.io/dovjay/pen/ExRGxvO",
+        organization: "FCC Front End Challenge",
+        projectThumbnail: projectCoverB
+    },
+    {
+        projectName: "Drumpads",
+        projectURL: "https://codepen.io/dovjay/pen/QWxJzVP",
+        organization: "FCC Front End Challenge",
+        projectThumbnail: projectCoverC
+    },
+    {
+        projectName: "Markdown Previewer",
+        projectURL: "https://codepen.io/dovjay/pen/XWYyRqV",
+        organization: "FCC Front End Challenge",
+        projectThumbnail: projectCoverD
+    },
+    {
+        projectName: "Random Quote Generator",
+        projectURL: "https://codepen.io/dovjay/pen/xxzQRdY",
+        organization: "FCC Front End Challenge",
+        projectThumbnail: projectCoverE
+    },
+]
 
 export default Home;

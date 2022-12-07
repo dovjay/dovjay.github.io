@@ -1,6 +1,7 @@
 import bookCoverOne from '../img/game-programming-patterns.jpg';
 import bookCoverTwo from '../img/41lZKXt1+ML._AC_SY580_.jpg';
 import bookCoverThree from '../img/41I0fK0G9kL._AC_SY1000_.jpg';
+import me from '../img/me.jpg';
 
 function About() {
     return (
@@ -9,7 +10,7 @@ function About() {
                 <div className="w-1/2 pr-8 aspect-square">
                     <img 
                         className="w-full h-full rounded-xl bg-slate-300 object-cover -rotate-90 mix-blend-luminosity" 
-                        src="https://picsum.photos/seed/people/300/" 
+                        src={me}
                         alt="Person" 
                     />
                 </div>

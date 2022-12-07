@@ -1,21 +1,40 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faDribbble, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import Eye from "./Eye";
 
 function Navbar() {
     return (
-        <section className="w-full text-white sticky top-0 bg-slate-900/90 backdrop-blur-lg z-10">
+        <section className="w-full text-white sticky top-0 bg-slate-900/90 backdrop-blur-lg z-20">
             <div className="w-full flex p-8 absolute pointer-events-none">
-                <div className="mx-auto w-8 aspect-[3/2] bg-white rounded-ellipse relative pointer-events-auto">
-                    <div className="bg-black w-2.5 aspect-square rounded-full absolute m-auto inset-0"></div>
-                </div>
+                <Eye />
             </div>
-            <div className="flex justify-between p-8 w-3/4 mx-auto">
-                <div className="flex gap-16 font-medium text-lg">
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/works">Works</Link>
+            <div className="flex justify-between p-4 w-3/4 mx-auto">
+                <div className="flex font-medium text-lg">
+                    <Link className="link px-8 py-2" to="/">Works</Link>
+                    <Link className="link px-8 py-2" to="/about">About</Link>
+                    <Link className="link px-8 py-2">Contacts</Link>
                 </div>
-                <div>
-                    <span>Icon</span>
+                <div className="flex gap-8 text-gray-300 my-auto">
+                    <a href="https://github.com/dovjay" target={"_blank"} rel="noreferrer" className="link h-fit">
+                        <FontAwesomeIcon 
+                            icon={faGithub} size="lg" 
+                            className="hover:text-white link"
+                        />
+                    </a>
+                    <a href="https://dribbble.com/dovjay" target={"_blank"} rel="noreferrer" className="link h-fit">
+                        <FontAwesomeIcon 
+                            icon={faDribbble} size="lg" 
+                            className="hover:text-white link" 
+                        />
+                    </a>
+                    <a href="https://twitter.com/dovjay_" target={"_blank"} rel="noreferrer" className="link h-fit group">
+                        <FontAwesomeIcon 
+                            icon={faTwitter} size="lg" 
+                            className="hover:text-white link"
+                        />
+                    </a>
                 </div>
             </div>
         </section>
