@@ -38,11 +38,11 @@ const thumbnailMotion = {
 }
 
 function ProjectCard(props) {
-    const { projectURL, projectName, projectThumbnail, organization } = props.project;
+    const { projectURL, projectName, projectThumbnail, organization, id } = props.project;
     return (
         <motion.div 
             initial="rest" whileHover="hover" animate="rest"
-            className="link w-full h-screen my-10"
+            className="link w-full h-screen my-10" key={id}
         >
             <motion.a 
                 href={projectURL}

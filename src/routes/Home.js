@@ -12,12 +12,12 @@ function Home() {
             <section className="flex justify-between">
                 <div className="-mt-40 w-5/12 grid content-center">
                     <h1 
-                        className="font-serif max-w-fit text-7xl font-bold text-transparent bg-clip-text leading-snug bg-gradient-to-r from-orange-300 via-purple-500 to-cyan-300"
+                        className="font-serif max-w-fit text-8xl font-bold text-transparent bg-clip-text leading-snug bg-gradient-to-r from-orange-300 via-purple-500 to-cyan-300"
                     >
                         Hi. I'm Dovjay. <br/>
                         A Developer.
                     </h1>
-                    <p className="text-white text-xl tracking-wide leading-relaxed mt-8">
+                    <p className="text-white text-2xl tracking-wide leading-relaxed mt-8">
                         Enjoy working in Front-End with <span className="font-bold">React</span>, 
                         prototyping many games with <span className="font-bold">Unity</span>, 
                         and designing UI/UX with <span className="font-bold">Figma</span>.
@@ -29,7 +29,7 @@ function Home() {
                         <div className="bg-gradient-to-b from-purple-400 to-cyan-300 w-1/6 aspect-square rounded-xl"></div>
                     </div>
                     <div className="mx-auto w-4/6 aspect-square bg-slate-800/50 rounded-2xl relative overflow-hidden">
-                        <div className="w-2/3 aspect-[3/2] bg-white rounded-ellipse absolute m-auto inset-0">
+                        <div className="w-1/2 aspect-[3/2] bg-white rounded-ellipse absolute m-auto inset-0">
                             <div className="w-1/4 bg-black aspect-square rounded-full absolute m-auto inset-0"></div>
                         </div>
                     </div>
@@ -57,31 +57,36 @@ const works = [
         projectName: "25 + 5 Clock",
         projectURL: "https://codepen.io/dovjay/pen/XWYoxGa",
         organization: "FCC Front End Challenge",
-        projectThumbnail: projectCoverA
+        projectThumbnail: projectCoverA,
+        id: 1
     },
     {
         projectName: "Calculator",
         projectURL: "https://codepen.io/dovjay/pen/ExRGxvO",
         organization: "FCC Front End Challenge",
-        projectThumbnail: projectCoverB
+        projectThumbnail: projectCoverB,
+        id: 2
     },
     {
         projectName: "Drumpads",
         projectURL: "https://codepen.io/dovjay/pen/QWxJzVP",
         organization: "FCC Front End Challenge",
-        projectThumbnail: projectCoverC
+        projectThumbnail: projectCoverC,
+        id: 3
     },
     {
         projectName: "Markdown Previewer",
         projectURL: "https://codepen.io/dovjay/pen/XWYyRqV",
         organization: "FCC Front End Challenge",
-        projectThumbnail: projectCoverD
+        projectThumbnail: projectCoverD,
+        id: 4
     },
     {
         projectName: "Random Quote Generator",
         projectURL: "https://codepen.io/dovjay/pen/xxzQRdY",
         organization: "FCC Front End Challenge",
-        projectThumbnail: projectCoverE
+        projectThumbnail: projectCoverE,
+        id: 5
     },
 ]
 
