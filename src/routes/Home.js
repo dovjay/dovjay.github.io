@@ -44,8 +44,8 @@ function Home() {
                 </div>
             </section>
             <section className="flex flex-col my-20 gap-10 h-fit">
-                {works.map(project => (
-                    <ProjectCard project={project} />
+                {works.map((project, index) => (
+                    <ProjectCard project={project} key={index+1} />
                 ))}
             </section>
         </div>

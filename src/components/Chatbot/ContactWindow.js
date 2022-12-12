@@ -1,0 +1,65 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+
+import Input from "../form/Input";
+import Textarea from "../form/Textarea";
+import Button from "../form/Button";
+
+import me from "../../img/me.jpg";
+
+const SERVICE_ID = process.env.REACT_APP_EMAIL_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.REACT_APP_EMAIL_PUBLIC_KEY;
+
+function ContactWindow(props) {
+    const form = useRef();
+
+    const sendEmail = e => {
+        e.preventDefault();
+
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
+    return (
+        <div className="fixed overflow-hidden rounded-md bottom-10 right-10 z-20 drop-shadow-lg transition duration-300">
+            <div className="flex mb-2">
+                <button 
+                    onClick={() => ({})} 
+                    className="ml-auto flex items-center bg-slate-600/25 py-1 px-3 rounded-full"
+                >
+                    <span className="text-white mr-2 text-sm">Close</span>
+                    <FontAwesomeIcon icon={faClose} className="text-white" size="sm" />
+                </button>
+            </div>
+            <div className="rounded-t-md p-5 drop-shadow bg-slate-800 grid justify-center place-items-center">
+                <img className="object-cover w-20 aspect-square -rotate-90 rounded-full mb-4" src={me} alt="Me" />
+                <h3 className="font-bold text-md text-white mb-2">
+                    Hello there!
+                </h3>
+                <h5 className="text-sm text-gray-400">
+                    I'll get back to you shortly.
+                </h5>
+            </div>
+            <form 
+                ref={form} 
+                onSubmit={sendEmail}
+                className="grid gap-4 w-[22rem] text-gray-800 p-5 bg-white"
+            >
+                <Input label="Name" name="from_name" type="text" />
+                <Input label="Email" name="from_email" type="email" />
+                <Input label="Subject" name="subject" type="text" />
+                <Textarea label="Message" name="message" rows={4} />
+                <Button name="Submit" type="submit" />
+            </form>
+        </div>
+    );
+}
+
+export default ContactWindow;

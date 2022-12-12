@@ -14,7 +14,7 @@
 }
 
 .react-chatbot-kit-chat-message-container {
-    @apply bg-slate-800 overflow-x-hidden rounded-b-md max-h-96 w-80
+    @apply bg-slate-800 overflow-x-hidden rounded-b-md max-h-96 w-[22rem]
 }
 
 .react-chatbot-kit-chat-bot-avatar-container {
@@ -30,11 +30,11 @@
 }
 
 .react-chatbot-kit-user-chat-message {
-    @apply bg-slate-700 w-5/6 ml-auto mr-4 p-4 rounded-lg text-white
+    @apply bg-slate-700 w-4/6 ml-auto mr-4 p-4 rounded-lg text-white
 }
 
 .react-chatbot-kit-chat-bot-message {
-    @apply bg-slate-800 border border-gray-500 p-4 w-5/6 ml-4 rounded-lg text-white
+    @apply bg-slate-800 border border-gray-500 p-4 w-4/6 ml-4 rounded-lg text-white
 }
 
 .react-chatbot-kit-chat-bot-message-container, .react-chatbot-kit-user-chat-message-container {
