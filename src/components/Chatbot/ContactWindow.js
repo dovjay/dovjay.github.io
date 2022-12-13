@@ -38,14 +38,14 @@ function ContactWindow(props) {
             {({ activeWindow, setWindow }) => (
                 <div 
                     className={
-                        "fixed overflow-hidden rounded-md bottom-10 right-10 z-20 drop-shadow-lg transition duration-300" +
+                        "fixed overflow-hidden rounded-md bottom-8 md:right-8 right-4 z-20 drop-shadow-lg transition duration-300" +
                         (activeWindow === 'contact' ? "" : " opacity-0 translate-y-full ")
                     }
                 >
                     <div className="flex mb-2">
                         <button 
                             onClick={() => setWindow('')} 
-                            className="ml-auto flex items-center bg-slate-600/25 py-1 px-3 rounded-full"
+                            className="ml-auto flex items-center bg-black/75 py-1 px-3 rounded-full"
                         >
                             <span className="text-white mr-2 text-sm">Close</span>
                             <FontAwesomeIcon icon={faClose} className="text-white" size="sm" />
@@ -63,7 +63,7 @@ function ContactWindow(props) {
                     <form 
                         ref={form} 
                         onSubmit={sendEmail}
-                        className="grid gap-4 w-[22rem] text-gray-800 p-5 bg-white"
+                        className="grid gap-4 w-[22rem] max-h-96 overflow-y-auto text-gray-800 p-5 bg-white"
                     >
                         <Input label="Name" name="from_name" type="text" required={true} />
                         <Input label="Email" name="from_email" type="email" required={true} />

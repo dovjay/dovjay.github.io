@@ -30,7 +30,7 @@
 }
 
 .react-chatbot-kit-user-chat-message {
-    @apply bg-slate-700 w-4/6 ml-auto mr-4 p-4 rounded-lg text-white
+    @apply bg-slate-700 w-4/6 ml-auto mr-4 p-4 rounded-lg text-white text-right
 }
 
 .react-chatbot-kit-chat-bot-message {

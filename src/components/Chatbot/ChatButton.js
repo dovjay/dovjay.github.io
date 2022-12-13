@@ -10,7 +10,7 @@ function ChatButton(props) {
                 <button
                     onClick={() => setWindow('chatbot')}
                     className={
-                        'bg-slate-800 w-16 aspect-square rounded-full drop-shadow-2xl text-white fixed bottom-10 right-10 z-10 hover:bg-slate-700 hover:-translate-y-1 transition duration-300' +
+                        'bg-slate-800 w-16 aspect-square rounded-full drop-shadow-2xl text-white fixed bottom-8 right-8 z-20 hover:bg-slate-700 hover:-translate-y-1 transition duration-300' +
                         (activeWindow === "" ? "" : " opacity-0 ")
                     }
                 >

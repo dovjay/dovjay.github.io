@@ -18,7 +18,7 @@ function MainEye(props) {
             <div className="w-6 aspect-[1/3] bg-white absolute rounded-full m-auto inset-0 -translate-y-28 -translate-x-28 -rotate-45" />
             <div className="w-6 aspect-[1/3] bg-white absolute rounded-full m-auto inset-0 -translate-y-36" />
             <div className="w-6 aspect-[1/3] bg-white absolute rounded-full m-auto inset-0 -translate-y-28 translate-x-28 rotate-45" />
-            <div className="w-1/2 aspect-[3/2] bg-white rounded-ellipse absolute m-auto inset-0">
+            <div className="h-40 aspect-[3/2] bg-white rounded-ellipse absolute m-auto inset-0">
                 <motion.div 
                     className="w-2/6 bg-black aspect-square rounded-full absolute m-auto inset-0"
                     animate={{

@@ -42,7 +42,7 @@ function ProjectCard(props) {
     return (
         <motion.div 
             initial="rest" whileHover="hover" animate="rest"
-            className="link w-full h-screen my-10"
+            className="link w-full lg:h-screen max-lg:aspect-square my-6"
         >
             <motion.a 
                 href={projectURL}
@@ -50,15 +50,15 @@ function ProjectCard(props) {
                 className="link w-full h-full relative bg-slate-800 rounded-2xl block"
                 variants={containerMotion}
             >
-                <motion.div className="link absolute right-16 top-16 z-10">
-                    <h3 className="link text-gray-400 text-xl text-right font-semibold mb-2">{organization}</h3>
-                    <h1 className="link text-white text-4xl font-black font-serif tracking-wider text-right drop-shadow-xl">{projectName}</h1>
+                <motion.div className="link absolute lg:right-16 lg:top-16 right-12 top-12 z-10">
+                    <h3 className="link text-gray-500 text-xl text-right font-semibold mb-2">{organization}</h3>
+                    <h1 className="link text-white lg:text-4xl text-3xl ml-4 font-black font-serif tracking-wider text-right drop-shadow-md">{projectName}</h1>
                 </motion.div>
                 <motion.div 
-                    className='link w-3/4 h-full py-40 mx-auto'
+                    className='link w-3/4 h-full lg:py-40 py-20 mx-auto'
                     variants={thumbnailMotion}
                 >
-                    <img className="link w-full h-full object-cover rounded-xl drop-shadow-lg" src={projectThumbnail} alt={projectName} />
+                    <img className="link w-full h-full max-md:aspect-square object-cover rounded-xl drop-shadow-lg" src={projectThumbnail} alt={projectName} />
                 </motion.div>
             </motion.a>
         </motion.div>

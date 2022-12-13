@@ -15,7 +15,7 @@ function ChatbotWindow(props) {
             {({ activeWindow, setWindow }) => (
                 <div 
                     className={
-                        "fixed bottom-10 right-10 z-20 drop-shadow-lg transition duration-300" +
+                        "fixed bottom-8 md:right-8 right-4 z-20 drop-shadow-lg transition duration-300" +
                         (activeWindow === "chatbot" ? "" : " opacity-0 translate-y-full ")
                     }
                 >
