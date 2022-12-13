@@ -16,7 +16,7 @@ function About() {
                 </div>
                 <div className="w-1/2 py-8 pl-8">
                     <h2 className="text-3xl text-white font-bold font-serif leading-normal tracking-wide">
-                        I'm Dovjay, or Dovan Sanjaya. <br/> A Generalist Developer currently lives in Indonesia 
+                        I'm Dovjay, or Dovan Sanjaya. <br/> A Software Developer currently lives in Indonesia 
                         <span className="h-4 aspect-video bg-black inline-block ml-3 rounded-sm overflow-hidden">
                             <div className="h-1/2 bg-red-600"></div>
                             <div className="h-1/2 bg-white"></div>

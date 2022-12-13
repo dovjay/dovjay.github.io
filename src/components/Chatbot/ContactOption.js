@@ -1,14 +1,14 @@
 import { useState } from "react";
 
+import { ChatbotContext } from "./ChatbotContext";
+
 function ContactOption(props) {
     const [hideWidget, setHideWidget] = useState(false);
 
     const options = [
         { 
             text: "💌 Send a message", 
-            handler: () => {
-              // should set state to hide the whole chat container  
-            },
+            handler: null,
             id: 1
         },
         { 
@@ -22,13 +22,17 @@ function ContactOption(props) {
     ]
 
     const optionsMarkup = options.map((option) => (
-        <button
-            className="bg-blue-800 hover:bg-blue-700 w-fit py-3 px-6 rounded-full mx-4 text-white transition duration-500"
-            key={option.id}
-            onClick={option.handler}
-        >
-            {option.text}
-        </button>
+        <ChatbotContext.Consumer>
+            {({ setWindow }) => (
+                <button
+                    className="bg-blue-800 hover:bg-blue-700 w-fit py-3 px-6 rounded-full mx-4 text-white transition duration-500"
+                    key={option.id}
+                    onClick={option.handler === null ? () => setWindow('contact') : option.handler}
+                >
+                    {option.text}
+                </button>
+            )}
+        </ChatbotContext.Consumer>
     ));
 
     return (
