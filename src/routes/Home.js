@@ -6,6 +6,8 @@ import projectCoverC from '../img/drumpads.png';
 import projectCoverD from '../img/markdownpreviewer.png';
 import projectCoverE from '../img/randomquotegenerator.png';
 
+import MainEye from '../components/MainEye';
+
 function Home() {
     return (
         <div className="w-5/6 mx-auto">
@@ -28,10 +30,8 @@ function Home() {
                         <div className="bg-gradient-to-b from-orange-300 to-pink-400 w-1/6 aspect-square rounded-xl"></div>
                         <div className="bg-gradient-to-b from-purple-400 to-cyan-300 w-1/6 aspect-square rounded-xl"></div>
                     </div>
-                    <div className="mx-auto w-4/6 aspect-square bg-slate-800/50 rounded-2xl relative overflow-hidden">
-                        <div className="w-1/2 aspect-[3/2] bg-white rounded-ellipse absolute m-auto inset-0">
-                            <div className="w-1/4 bg-black aspect-square rounded-full absolute m-auto inset-0"></div>
-                        </div>
+                    <div className="mx-auto w-4/6 aspect-square bg-slate-800/50 rounded-2xl overflow-hidden">
+                        <MainEye />
                     </div>
                     <div className="flex justify-between">
                         <div className="bg-gradient-to-b from-pink-300 to-purple-400 w-1/6 aspect-square rounded-xl"></div>

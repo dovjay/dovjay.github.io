@@ -6,6 +6,7 @@ function Textarea(props) {
             </label>
             <textarea 
                 name={props.name} 
+                required={props.required || false}
                 className="rounded-md p-3 resize-none border border-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
                 rows={props.rows}
             ></textarea>

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
@@ -16,13 +16,18 @@ const PUBLIC_KEY = process.env.REACT_APP_EMAIL_PUBLIC_KEY;
 
 function ContactWindow(props) {
     const form = useRef();
+    const [disableButton, setDisableButton] = useState(false);
 
     const sendEmail = e => {
         e.preventDefault();
 
+        setDisableButton(true);
+
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then((result) => {
                 console.log(result.text);
+                form.current.reset();
+                setDisableButton(false);
             }, (error) => {
                 console.log(error.text);
             });
@@ -60,11 +65,11 @@ function ContactWindow(props) {
                         onSubmit={sendEmail}
                         className="grid gap-4 w-[22rem] text-gray-800 p-5 bg-white"
                     >
-                        <Input label="Name" name="from_name" type="text" />
-                        <Input label="Email" name="from_email" type="email" />
-                        <Input label="Subject" name="subject" type="text" />
-                        <Textarea label="Message" name="message" rows={4} />
-                        <Button name="Submit" type="submit" />
+                        <Input label="Name" name="from_name" type="text" required={true} />
+                        <Input label="Email" name="from_email" type="email" required={true} />
+                        <Input label="Subject" name="subject" type="text" required={true} />
+                        <Textarea label="Message" name="message" rows={4} required={true} />
+                        <Button disabled={disableButton} name="Submit" type="submit" />
                     </form>
                 </div>
             )}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faDribbble, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-import Eye from "./Eye";
+import TopEye from "./TopEye";
 
 import { ChatbotContext } from "./Chatbot/ChatbotContext";
 
@@ -12,7 +12,7 @@ function Navbar() {
             {({ setWindow }) => (
                 <section className="w-full text-white sticky top-0 bg-slate-900/90 backdrop-blur-lg z-20">
                     <div className="w-full flex p-8 absolute pointer-events-none">
-                        <Eye />
+                        <TopEye />
                     </div>
                     <div className="flex justify-between p-4 w-3/4 mx-auto">
                         <div className="flex font-medium text-lg">

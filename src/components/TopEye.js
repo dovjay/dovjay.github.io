@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import Vector from "../utils/Vector";
 
-class Eye extends React.Component {
+class TopEye extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -117,4 +117,4 @@ class Eye extends React.Component {
     }
 }
 
-export default Eye;
+export default TopEye;
