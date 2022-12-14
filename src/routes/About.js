@@ -5,16 +5,16 @@ import me from '../img/me.jpg';
 
 function About() {
     return (
-        <div className="w-3/4 mx-auto">
-            <section className="w-3/4 mx-auto my-40 flex">
-                <div className="w-1/2 pr-8 aspect-square">
+        <div className="xl:w-10/12 w-11/12 mx-auto">
+            <section className="xl:w-3/4 lg:mx-auto w-full sm:my-40 my-20 flex max-lg:flex-col gap-12 max-lg:items-center">
+                <div className="lg:w-1/2 w-full">
                     <img 
-                        className="w-full h-full rounded-xl bg-slate-300 object-cover -rotate-90 mix-blend-luminosity" 
+                        className="lg:h-[28rem] lg:w-[28rem] h-full ml-auto rounded-xl bg-slate-300 object-cover -rotate-90 mix-blend-luminosity" 
                         src={me}
                         alt="Person" 
                     />
                 </div>
-                <div className="w-1/2 py-8 pl-8">
+                <div className="lg:w-1/2 mx-auto">
                     <h2 className="text-3xl text-white font-bold font-serif leading-normal tracking-wide">
                         I'm Dovjay, or Dovan Sanjaya. <br/> A Software Developer currently lives in Indonesia 
                         <span className="h-4 aspect-video bg-black inline-block ml-3 rounded-sm overflow-hidden">
@@ -22,7 +22,7 @@ function About() {
                             <div className="h-1/2 bg-white"></div>
                         </span>
                     </h2>
-                    <p className="text-white mt-4 text-lg tracking-wide">
+                    <p className="text-white mt-8 text-lg tracking-wide">
                         These past 3 years, I've been exploring on what's gonna my career choice. 
                         Learning all of the things that I would like to do in the future like:
                         UI/UX design in Figma, creating many game prototypes in Unity, 
@@ -40,7 +40,7 @@ function About() {
             </h2>
             <section className="mt-16 mb-40 flex flex-col gap-4">
                 <div>
-                    <div className="ml-auto bg-slate-800 w-2/12 p-6 flex justify-between items-center rounded-xl">
+                    <div className="ml-auto bg-slate-800 lg:w-2/12 w-full p-6 flex justify-between items-center rounded-xl">
                         <div>
                             <p className="text-white text-lg font-semibold">
                                 Now
@@ -55,8 +55,8 @@ function About() {
                     </div>
                 </div>
                 <div className="flex">
-                    <div className="w-7/12"></div>
-                    <div className="bg-slate-800 w-3/12 p-6 flex justify-between items-center rounded-xl">
+                    <div className="lg:w-7/12"></div>
+                    <div className="bg-slate-800 lg:w-3/12 w-full p-6 flex justify-between items-center rounded-xl">
                         <div>
                             <p className="text-white text-lg font-semibold">
                                 UI/UX Designer
@@ -71,8 +71,8 @@ function About() {
                     </div>
                 </div>
                 <div className="flex">
-                    <div className="w-4/12"></div>
-                    <div className="bg-slate-800 w-4/12 p-6 flex justify-between items-center rounded-xl">
+                    <div className="lg:w-4/12"></div>
+                    <div className="bg-slate-800 lg:w-4/12 w-full p-6 flex justify-between items-center rounded-xl">
                         <div>
                             <p className="text-white text-lg font-semibold">
                                 FullStack Developer
@@ -82,12 +82,12 @@ function About() {
                             </p>
                         </div>
                         <h4 className="font-bold text-white text-2xl lining-nums">
-                            1~2
+                            1-2
                         </h4>
                     </div>
                 </div>
                 <div>
-                    <div className="bg-slate-800 w-4/12 p-6 flex justify-between items-center rounded-xl">
+                    <div className="bg-slate-800 lg:w-4/12 w-full p-6 flex justify-between items-center rounded-xl">
                         <div>
                             <p className="text-white text-lg font-semibold">
                                 FullStack Developer
@@ -105,7 +105,7 @@ function About() {
             <h2 className="w-3/4 mx-auto mt-40 text-4xl font-medium font-serif text-white">
                 Currently reading
             </h2>
-            <section className="mt-16 mb-40 flex justify-around">
+            <section className="mt-16 mb-40 flex max-lg:flex-col lg:mx-auto justify-center items-center gap-12">
                 <div>
                     <img 
                         className="w-72 aspect-[5/7] object-scale-down mix-blend-luminosity" 
