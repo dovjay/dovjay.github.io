@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.329caace.css",
-    "main.js": "/static/js/main.41645baa.js",
+    "main.css": "/static/css/main.dbcc32d4.css",
+    "main.js": "/static/js/main.dfe70575.js",
     "static/js/787.f962187d.chunk.js": "/static/js/787.f962187d.chunk.js",
+    "static/media/projectZenmore.png": "/static/media/projectZenmore.aa3ae3934476497e9cf3.png",
     "static/media/me.jpg": "/static/media/me.88ba1ba5d8bc550d0d55.jpg",
     "static/media/markdownpreviewer.png": "/static/media/markdownpreviewer.7cb36b1b3417b9960b68.png",
     "static/media/game-programming-patterns.jpg": "/static/media/game-programming-patterns.04015652b49964cd4844.jpg",
@@ -13,12 +14,12 @@
     "static/media/41lZKXt1+ML._AC_SY580_.jpg": "/static/media/41lZKXt1+ML._AC_SY580_.7a519dc90565c1bc51d1.jpg",
     "static/media/41I0fK0G9kL._AC_SY1000_.jpg": "/static/media/41I0fK0G9kL._AC_SY1000_.9e996278b71ef7263b76.jpg",
     "index.html": "/index.html",
-    "main.329caace.css.map": "/static/css/main.329caace.css.map",
-    "main.41645baa.js.map": "/static/js/main.41645baa.js.map",
+    "main.dbcc32d4.css.map": "/static/css/main.dbcc32d4.css.map",
+    "main.dfe70575.js.map": "/static/js/main.dfe70575.js.map",
     "787.f962187d.chunk.js.map": "/static/js/787.f962187d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.329caace.css",
-    "static/js/main.41645baa.js"
+    "static/css/main.dbcc32d4.css",
+    "static/js/main.dfe70575.js"
   ]
 }
