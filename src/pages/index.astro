@@ -1,16 +1,22 @@
 ---
-
+import { DockNav } from "@/components/DockNav";
+import Count from "@/sections/home/count";
+import "@/styles/globals.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Dovjay</title>
+  </head>
+  <body>
+    <main class="container mx-auto h-screen">
+      <h1 class="text-3xl font-bold">Dovan Sanjaya Resume</h1>
+      <Count client:load />
+      <DockNav client:load />
+    </main>
+  </body>
 </html>
