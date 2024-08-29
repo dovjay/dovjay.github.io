@@ -1,0 +1,36 @@
+---
+import { Certificates, Educations } from "@/constants/Educations";
+---
+
+<section class="flex flex-col gap-4 w-full">
+  <div>
+    <h1 class="font-bold text-xl">Education</h1>
+    {
+      Educations.map((ed) => (
+        <div class="flex items-center p-2">
+          <div class="w-12 aspect-square bg-neutral-500 rounded-full" />
+          <div class="ml-2">
+            <h2 class="font-bold text-xl">{ed.school}</h2>
+            <p>{ed.degree}</p>
+          </div>
+          <p class="ml-auto">{ed.duration}</p>
+        </div>
+      ))
+    }
+  </div>
+  <div>
+    <h1 class="text-lg font-medium">Certificate</h1>
+    {
+      Certificates.map((cert) => (
+        <div class="flex items-center p-2">
+          <div class="w-12 aspect-square bg-neutral-500 rounded-full" />
+          <div class="ml-2">
+            <h2 class="font-bold text-xl">{cert.name}</h2>
+            <p>{cert.institution}</p>
+          </div>
+          <p class="ml-auto">{cert.issued}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

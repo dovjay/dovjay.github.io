@@ -1,0 +1,30 @@
+---
+import { Experiences } from "@/constants/Experiences";
+---
+
+<section class="flex flex-col gap-2 w-full">
+  <h1 class="font-bold text-xl">Experience</h1>
+  <div class="flex flex-col gap-2">
+    {
+      Experiences.map((exp) => (
+        <div class="flex flex-col gap-2 p-2">
+          <div class="flex items-center">
+            <div class="w-12 aspect-square bg-neutral-500 rounded-full" />
+            <div class="ml-2">
+              <h2 class="font-bold text-xl">{exp.company}</h2>
+              <p>{exp.position}</p>
+            </div>
+            <p class="ml-auto">{exp.duration}</p>
+          </div>
+          <div class="flex gap-2 ml-12 pl-2">
+            {exp.skills.map((skill) => (
+              <div class="px-3 py-1 border-green-500 bg-green-100 text-green-900 font-medium border-2 rounded-lg text-sm">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

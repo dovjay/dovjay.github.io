@@ -1,22 +1,46 @@
 ---
-import { DockNav } from "@/components/DockNav";
-import Count from "@/sections/home/count";
+import { Button } from "@/components/ui/button";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import About from "@/sections/home/About.astro";
+import Education from "@/sections/home/Education.astro";
+import Experience from "@/sections/home/Experience.astro";
 import "@/styles/globals.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Dovjay</title>
-  </head>
-  <body>
-    <main class="container mx-auto h-screen">
-      <h1 class="text-3xl font-bold">Dovan Sanjaya Resume</h1>
-      <Count client:load />
-      <DockNav client:load />
-    </main>
-  </body>
-</html>
+<BaseLayout title="Dovjay">
+  <article class="w-full flex flex-col gap-12">
+    <div
+      id="about"
+      class="overflow-y-hidden flex flex-col gap-12 relative items-center"
+    >
+      <About />
+      <Experience />
+      <Education />
+      <Button
+        id="about-seemore"
+        className="absolute bottom-0 w-fit bg-transparent text-foreground hover:text-accent"
+        >See More</Button
+      >
+    </div>
+  </article>
+</BaseLayout>
+
+<script is:inline>
+  let openAbout = false;
+  const about = document.getElementById("about");
+  about.style.height = "21rem";
+
+  const aboutSeeMore = document.getElementById("about-seemore");
+  aboutSeeMore.addEventListener("click", () => {
+    if (openAbout) {
+      about.style.height = "21rem";
+      aboutSeeMore.innerHTML = "See More";
+      aboutSeeMore.classList.add("absolute", "bottom-0");
+    } else {
+      about.style.height = "auto";
+      aboutSeeMore.innerHTML = "See Less";
+      aboutSeeMore.classList.remove("absolute", "bottom-0");
+    }
+    openAbout = !openAbout;
+  });
+</script>

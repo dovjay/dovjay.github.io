@@ -1,0 +1,21 @@
+---
+import { DockNav } from "@/components/DockNav";
+import SideBar from "@/components/SideBar.astro";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="flex gap-4 container mx-auto pt-16 pb-40">
+      <SideBar />
+      <slot />
+    </main>
+    <DockNav client:load />
+  </body>
+</html>
