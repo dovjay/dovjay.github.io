@@ -1,27 +1,62 @@
 ---
-
+import { Button } from "@/components/ui/button";
+import Education from "./Education.astro";
+import Experience from "./Experience.astro";
 ---
 
-<section class="flex flex-col gap-8">
-  <div class="flex gap-2 items-center">
-    <div class="flex flex-col gap-2">
-      <h1 class="text-5xl font-bold">Well, hello there!</h1>
-      <h4>
+<div
+  id="about"
+  class="overflow-y-hidden flex flex-col gap-12 relative items-center"
+>
+  <section class="flex flex-col gap-8">
+    <div class="flex gap-2 items-center">
+      <div class="flex flex-col gap-2">
+        <h1 class="text-5xl font-bold">Well, hello there!</h1>
+        <h4>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
+          earum quaerat vitae exercitationem corrupti perspiciatis rerum
+          voluptates sit aliquid.
+        </h4>
+      </div>
+      <div class="text-9xl">👋</div>
+    </div>
+    <div>
+      <h2 class="font-bold text-xl">About</h2>
+      <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate,
         earum quaerat vitae exercitationem corrupti perspiciatis rerum
-        voluptates sit aliquid.
-      </h4>
+        voluptates sit aliquid. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Cupiditate, earum quaerat vitae exercitationem
+        corrupti perspiciatis rerum voluptates sit aliquid.
+      </p>
     </div>
-    <div class="text-9xl">👋</div>
-  </div>
-  <div>
-    <h2 class="font-bold text-xl">About</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, earum
-      quaerat vitae exercitationem corrupti perspiciatis rerum voluptates sit
-      aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Cupiditate, earum quaerat vitae exercitationem corrupti perspiciatis rerum
-      voluptates sit aliquid.
-    </p>
-  </div>
-</section>
+  </section>
+
+  <Experience />
+  <Education />
+  <Button
+    id="about-seemore"
+    className="absolute bottom-0 w-fit bg-transparent text-foreground hover:text-accent"
+    >See More</Button
+  >
+</div>
+
+<script is:inline>
+  let openAbout = false;
+  const about = document.getElementById("about");
+  about.style.height = "21rem";
+
+  const aboutSeeMore = document.getElementById("about-seemore");
+  aboutSeeMore.addEventListener("click", () => {
+    if (openAbout) {
+      about.style.height = "21rem";
+      aboutSeeMore.innerHTML = "See More";
+      aboutSeeMore.classList.add("absolute", "bottom-0");
+    } else {
+      about.style.height = "auto";
+      aboutSeeMore.innerHTML = "See Less";
+      aboutSeeMore.classList.remove("absolute", "bottom-0");
+    }
+    openAbout = !openAbout;
+  });
+</script>
