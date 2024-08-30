@@ -89,7 +89,7 @@ export function VelocityScroll({
 
     return (
       <div
-        className="w-full overflow-hidden whitespace-nowrap"
+        className="max-xl:max-w-[600px] overflow-clip whitespace-nowrap mx-auto"
         ref={containerRef}
       >
         <motion.div className={cn("inline-block", className)} style={{ x }}>

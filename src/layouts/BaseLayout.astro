@@ -12,9 +12,11 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <main class="flex gap-4 container mx-auto pt-16 pb-40">
-      <SideBar />
-      <slot />
+    <main class="container mx-auto pt-16 pb-40">
+      <div class="flex gap-4">
+        <SideBar />
+        <slot />
+      </div>
     </main>
     <DockNav client:load />
   </body>
