@@ -1,11 +1,19 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import About from "@/sections/home/About.astro";
+import Blogs from "@/sections/home/Blogs.astro";
+import ContactMe from "@/sections/home/ContactMe.astro";
+import Projects from "@/sections/home/Projects.astro";
+import Skills from "@/sections/home/Skills.astro";
 import "@/styles/globals.css";
 ---
 
-<BaseLayout title="Dovjay">
-  <article class="w-full flex flex-col gap-12">
+<BaseLayout title="Dovan Sanjaya">
+  <article class="w-full flex flex-col gap-20">
     <About />
+    <Skills />
+    <Projects />
+    <Blogs />
+    <ContactMe />
   </article>
 </BaseLayout>

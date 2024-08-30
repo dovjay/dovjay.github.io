@@ -34,9 +34,7 @@ import Experience from "./Experience.astro";
 
   <Experience />
   <Education />
-  <Button
-    id="about-seemore"
-    className="absolute bottom-0 w-fit bg-transparent text-foreground hover:text-accent"
+  <Button id="about-seemore" className="absolute bottom-0 w-fit" variant="ghost"
     >See More</Button
   >
 </div>
@@ -44,12 +42,13 @@ import Experience from "./Experience.astro";
 <script is:inline>
   let openAbout = false;
   const about = document.getElementById("about");
-  about.style.height = "21rem";
+  const defaultAboutHeight = "19rem";
+  about.style.height = defaultAboutHeight;
 
   const aboutSeeMore = document.getElementById("about-seemore");
   aboutSeeMore.addEventListener("click", () => {
     if (openAbout) {
-      about.style.height = "21rem";
+      about.style.height = defaultAboutHeight;
       aboutSeeMore.innerHTML = "See More";
       aboutSeeMore.classList.add("absolute", "bottom-0");
     } else {
