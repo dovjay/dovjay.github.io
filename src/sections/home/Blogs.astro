@@ -1,4 +1,6 @@
 ---
+import Heading from "@/components/Heading.astro";
+
 const BlogsData = [
   {
     title: "Blog 1",
@@ -40,11 +42,7 @@ const BlogsData = [
 
 <section class="flex flex-col gap-8 items-center">
   <div class="flex flex-col gap-2">
-    <h1
-      class="bg-black rounded-lg px-3 py-1 text-sm text-background w-fit mx-auto"
-    >
-      Blogs
-    </h1>
+    <Heading>Blogs</Heading>
     <h2 class="text-center text-5xl tracking-tight font-bold">
       I like writing things
     </h2>
@@ -54,18 +52,23 @@ const BlogsData = [
     </h3>
   </div>
 
-  <div class="grid w-full grid-cols-2 gap-4">
+  <div class="flex flex-col gap-2 w-full">
     {
       BlogsData.map((blog) => (
-        <div class="rounded-lg overflow-clip border border-foreground/25 h-fit col-span-2 lg:col-span-1">
-          {blog.cover && <img src={blog.cover} alt={blog.title} />}
+        <div class="rounded-lg overflow-clip border border-foreground/25 h-32 flex col-span-2 lg:col-span-1">
+          {blog.cover && (
+            <img
+              src={blog.cover}
+              alt={blog.title}
+              class="object-cover h-full"
+            />
+          )}
           <div class="p-3 flex flex-col gap-3">
-            <h2 class="font-bold text-xl">{blog.title}</h2>
-            <p class="line-clamp-2">{blog.content}</p>
             <div class="flex justify-between flex-wrap">
-              <p class="font-bold">{blog.author}</p>
+              <h2 class="font-bold text-xl">{blog.title}</h2>
               <p>{blog.publishedAt.toLocaleDateString()}</p>
             </div>
+            <p class="line-clamp-2">{blog.content}</p>
           </div>
         </div>
       ))

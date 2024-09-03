@@ -24,12 +24,12 @@ export const Certificates = [
     skills: ["C#", "Unity"],
   },
   {
-    name: "Fullstack Javascript Immersive Program",
+    name: "Fullstack JavaScript Immersive Program",
     institution: "Hacktiv8 Indonesia",
     logo: "/images/education/hacktiv8.png",
     issued: "Dec 2018",
     credential: "https://hire.hacktiv8.com/verify/fsjs/DovanSanjaya-20181224",
-    skills: ["React", "React Native", "Express", "Javascript", "Mocha", "Chai", "Vue"],
+    skills: ["React", "React Native", "Express", "JavaScript", "Mocha", "Chai", "Vue"],
   },
   {
     name: "JavaScript Algorithms and Data Structures",

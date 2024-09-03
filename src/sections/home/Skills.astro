@@ -2,6 +2,7 @@
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { Experiences } from "@/constants/Experiences";
 import { Certificates } from "@/constants/Educations";
+import Heading from "@/components/Heading.astro";
 
 const allSkill = [
   ...new Set([
@@ -14,9 +15,7 @@ const allSkill = [
 ---
 
 <section class="flex flex-col gap-2 items-center">
-  <h1 class="bg-black rounded-lg px-3 py-1 text-sm text-background">
-    Tech Stacks
-  </h1>
+  <Heading>Tech Stacks</Heading>
   <VelocityScroll
     text={allSkill}
     default_velocity={0.25}
