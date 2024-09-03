@@ -1,36 +1,72 @@
 ---
+import { BorderBeam } from "@/components/magicui/border-beam";
 import { Certificates, Educations } from "@/constants/Educations";
+import { AwardIcon, PiIcon } from "lucide-react";
 ---
 
-<section class="flex flex-col gap-4 w-full">
-  <div>
+<section class="flex flex-col gap-8 w-full">
+  <div class="flex flex-col gap-4">
     <h1 class="font-bold text-xl">Education</h1>
-    {
-      Educations.map((ed) => (
-        <div class="flex items-center p-2">
-          <div class="w-12 aspect-square bg-neutral-500 rounded-full" />
-          <div class="ml-2">
-            <h2 class="font-bold text-xl">{ed.school}</h2>
-            <p>{ed.degree}</p>
+    <div class="flex flex-col gap-4">
+      {
+        Educations.map((ed) => (
+          <div class="flex items-center">
+            <div class="w-12 aspect-square border rounded-full flex justify-center items-center">
+              <PiIcon />
+            </div>
+            <div class="ml-4">
+              <h2 class="font-bold text-xl">{ed.school}</h2>
+              <p>{ed.degree}</p>
+            </div>
+            <p class="ml-auto">{ed.duration}</p>
           </div>
-          <p class="ml-auto">{ed.duration}</p>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
-  <div>
-    <h1 class="text-lg font-medium">Certificate</h1>
-    {
-      Certificates.map((cert) => (
-        <div class="flex items-center p-2">
-          <div class="w-12 aspect-square bg-neutral-500 rounded-full" />
-          <div class="ml-2">
-            <h2 class="font-bold text-xl">{cert.name}</h2>
-            <p>{cert.institution}</p>
+  <div class="flex flex-col gap-4">
+    <h1 class="text-xl font-bold">Certificate</h1>
+    <div class="grid lg:grid-cols-2 gap-4">
+      {
+        Certificates.map((cert) => (
+          <div class="relative group">
+            <a
+              class="border p-4 rounded-xl flex flex-col justify-between min-h-48 group-hover:bg-neutral-50 dark:group-hover:bg-neutral-900 relative overflow-clip"
+              href={cert.credential}
+              target="_blank"
+            >
+              <div class="flex justify-between">
+                <img
+                  class="w-10 aspect-square bg-background border rounded-full group-hover:w-8 transition-all"
+                  src={cert.logo}
+                  alt={`${cert.name} logo`}
+                />
+                <p class="ml-auto italic text-sm">{cert.issued}</p>
+              </div>
+              <div class="flex items-center gap-2 mx-auto">
+                <AwardIcon className="max-w-8 max-h-8 group-hover:max-w-5 group-hover:max-h-5 group-hover:text-foreground transition-all duration-300" />
+                <p class="group-hover:opacity-100 group-hover:max-w-40 opacity-0 max-w-0 text-nowrap transition-all duration-500">
+                  See Credential
+                </p>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h2 class="font-bold leading-tight">{cert.name}</h2>
+                <p class="text-sm group-hover:max-h-0 group-hover:opacity-0 opacity-100 max-h-5 transition-all">
+                  {cert.institution}
+                </p>
+              </div>
+              <BorderBeam />
+            </a>
+            <div class="flex justify-center flex-wrap gap-1 p-2 -translate-y-32 max-h-0 opacity-20 group-hover:opacity-100 group-hover:translate-y-0 group-hover:max-h-max transition">
+              {cert.skills.map((skill) => (
+                <div class="px-3 py-1 bg-neutral-100 text-neutral-900 font-medium border-2 rounded-lg text-sm text-nowrap">
+                  {skill}
+                </div>
+              ))}
+            </div>
           </div>
-          <p class="ml-auto">{cert.issued}</p>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </section>
