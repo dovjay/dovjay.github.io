@@ -1,6 +1,7 @@
 ---
 import { DockNav } from "@/components/DockNav";
 import SideBar from "@/components/SideBar.astro";
+import "@/styles/globals.css";
 
 const { title } = Astro.props;
 ---
@@ -15,7 +16,9 @@ const { title } = Astro.props;
     <main class="container mx-auto pt-16 pb-40">
       <div class="flex gap-4">
         <SideBar />
-        <slot />
+        <article class="w-full flex flex-col gap-20">
+          <slot />
+        </article>
       </div>
     </main>
     <DockNav client:load />

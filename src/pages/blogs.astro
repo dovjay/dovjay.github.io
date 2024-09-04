@@ -1,0 +1,14 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogCard from "@/sections/blogs/BlogCard.astro";
+import { getCollection } from "astro:content";
+
+const allBlogPosts = await getCollection("blog");
+---
+
+<BaseLayout title="Blogs">
+  <h1>Ini halaman blogs</h1>
+  <div>
+    {allBlogPosts.map((post: any) => <BlogCard blogData={post} />)}
+  </div>
+</BaseLayout>

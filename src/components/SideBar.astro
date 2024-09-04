@@ -1,15 +1,62 @@
 ---
+import { DownloadIcon } from "lucide-react";
+import HyperText from "./magicui/hyper-text";
+import { Button } from "./ui/button";
 
+const NavLinks = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Projects",
+    url: "/projects",
+  },
+  {
+    name: "Blogs",
+    url: "/blogs",
+  },
+];
+
+const currentPath = new URL(Astro.request.url).pathname;
 ---
 
-<div class="flex flex-col gap-2 p-2 sticky top-2 self-start max-sm:hidden">
-  <div class="w-16 aspect-square bg-neutral-500 rounded-xl"></div>
-  <div class="flex justify-center">
-    <h4 class="" style="writing-mode: vertical-lr;">dovjay/vaust</h4>
-    <h3 class="font-bold text-xl" style="writing-mode: vertical-lr;">
-      Dovan Sanjaya
-    </h3>
+<nav
+  class="flex flex-col justify-between h-screen px-2 py-5 sticky top-0 self-start max-sm:hidden items-center bg-background"
+>
+  <div class="flex flex-col gap-2">
+    <div class="w-16 aspect-square bg-neutral-500 rounded-xl"></div>
+    <div class="flex justify-center">
+      <h4 class="" style="writing-mode: vertical-lr;">dovjay/vaust</h4>
+      <h3 class="font-bold text-xl" style="writing-mode: vertical-lr;">
+        Dovan Sanjaya
+      </h3>
+    </div>
   </div>
-</div>
+  <div class="flex flex-col gap-8">
+    {
+      NavLinks.map((link) => (
+        <a
+          href={link.url}
+          class={
+            link.url !== currentPath
+              ? "opacity-25 hover:opacity-100 hover:cursor-pointer"
+              : ""
+          }
+        >
+          <HyperText
+            client:load
+            className="text-xl font-bold text-black dark:text-white"
+            text={link.name}
+            style={{ writingMode: "vertical-lr" }}
+          />
+        </a>
+      ))
+    }
+  </div>
+  <Button variant="ghost" className="rounded-full p-2">
+    <DownloadIcon />
+  </Button>
+</nav>
 
 <script is:inline></script>
