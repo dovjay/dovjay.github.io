@@ -1,0 +1,77 @@
+---
+import Heading from "@/components/Heading.astro";
+
+const BlogsData = [
+  {
+    title: "Blog 1",
+    publishedAt: new Date(),
+    cover:
+      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: "Dovan Sanjaya",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, earum quaerat vitae exercitationem corrupti perspiciatis rerum voluptates sit aliquid.",
+  },
+  {
+    title: "Blog 2",
+    publishedAt: new Date(),
+    cover:
+      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: "Dovan Sanjaya",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, earum quaerat vitae exercitationem corrupti perspiciatis rerum voluptates sit aliquid.",
+  },
+  {
+    title: "Blog 3",
+    publishedAt: new Date(),
+    cover:
+      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    author: "Dovan Sanjaya",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, earum quaerat vitae exercitationem corrupti perspiciatis rerum voluptates sit aliquid.",
+  },
+  {
+    title: "Blog 4",
+    publishedAt: new Date(),
+    cover: "",
+    author: "Dovan Sanjaya",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, earum quaerat vitae exercitationem corrupti perspiciatis rerum voluptates sit aliquid.",
+  },
+];
+---
+
+<section class="flex flex-col gap-8 items-center">
+  <div class="flex flex-col gap-2">
+    <Heading>Blogs</Heading>
+    <h2 class="text-center text-5xl tracking-tight font-bold">
+      I like writing things
+    </h2>
+    <h3 class="text-center text-2xl">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi officiis
+      labore harum voluptatibus, consequatur voluptatem dolorum at odi.
+    </h3>
+  </div>
+
+  <div class="flex flex-col gap-4 w-full">
+    {
+      BlogsData.map((blog) => (
+        <div class="rounded-lg overflow-clip border border-foreground/25 h-32 flex col-span-2 lg:col-span-1">
+          {blog.cover && (
+            <img
+              src={blog.cover}
+              alt={blog.title}
+              class="object-cover h-full"
+            />
+          )}
+          <div class="p-3 flex flex-col gap-3">
+            <div class="flex justify-between flex-wrap">
+              <h2 class="font-bold text-xl">{blog.title}</h2>
+              <p>{blog.publishedAt.toLocaleDateString()}</p>
+            </div>
+            <p class="line-clamp-2">{blog.content}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,22 +1,16 @@
 ---
-import { DockNav } from "@/components/DockNav";
-import Count from "@/sections/home/count";
-import "@/styles/globals.css";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import About from "@/sections/home/About.astro";
+import Blogs from "@/sections/home/Blogs.astro";
+import ContactMe from "@/sections/home/ContactMe.astro";
+import Projects from "@/sections/home/Projects.astro";
+import Skills from "@/sections/home/Skills.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Dovjay</title>
-  </head>
-  <body>
-    <main class="container mx-auto h-screen">
-      <h1 class="text-3xl font-bold">Dovan Sanjaya Resume</h1>
-      <Count client:load />
-      <DockNav client:load />
-    </main>
-  </body>
-</html>
+<BaseLayout title="Dovan Sanjaya">
+  <About />
+  <Skills />
+  <Projects />
+  <Blogs />
+  <ContactMe />
+</BaseLayout>

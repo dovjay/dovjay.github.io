@@ -1,0 +1,60 @@
+---
+import { Experiences } from "@/constants/Experiences";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import { Building2Icon } from "lucide-react";
+---
+
+<section class="flex flex-col gap-4 w-full">
+  <h1 class="font-bold text-xl">Experience</h1>
+  <div class="flex flex-col divide-y relative">
+    {
+      Experiences.map((exp) => (
+        <div class="flex flex-col gap-5 py-4 first:pt-0 border-l ml-6 pl-8">
+          <div class="flex">
+            <div class="w-12 aspect-square border rounded-full flex justify-center items-center absolute left-0 bg-background overflow-clip">
+              {exp.logo ? (
+                <img src={exp.logo} alt={`${exp.company} logo`} />
+              ) : (
+                <Building2Icon />
+              )}
+            </div>
+            <div class="ml-2">
+              <h2 class="font-bold text-xl">{exp.company}</h2>
+              <p>{exp.position}</p>
+            </div>
+            <p class="ml-auto text-sm">{exp.duration}</p>
+          </div>
+          <ul>
+            {exp.projects?.map((project) => (
+              <li class="list-disc list-inside mb-4 last:mb-2">
+                <a
+                  class={
+                    "font-bold text-lg " +
+                    (project.link
+                      ? "hover:underline hover:text-blue-500 transition group"
+                      : "pointer-events-none")
+                  }
+                  href={project.link}
+                  target="_blank"
+                >
+                  {project.name}{" "}
+                  {project.link && (
+                    <ExternalLinkIcon className="group-hover:opacity-100 group-hover:translate-x-0 -translate-x-4 opacity-0 transition inline ml-2 text-blue-500" />
+                  )}
+                </a>
+                <p>{project.description}</p>
+              </li>
+            ))}
+          </ul>
+          <div class="flex gap-2 flex-wrap">
+            {exp.skills.map((skill) => (
+              <div class="px-3 py-1 bg-neutral-100 text-neutral-900 font-medium border-2 rounded-lg text-sm text-nowrap">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

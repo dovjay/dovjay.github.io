@@ -1,0 +1,68 @@
+---
+import { Button } from "@/components/ui/button";
+import Education from "./Education.astro";
+import Experience from "./Experience.astro";
+---
+
+<div class="flex flex-col gap-4">
+  <div
+    id="about"
+    class="overflow-y-hidden flex flex-col gap-12 relative items-center [mask-image:linear-gradient(to_top,transparent_0%,#000_50%)]"
+  >
+    <section id="about-section" class="flex flex-col gap-8">
+      <div class="flex gap-2 items-center">
+        <div class="flex flex-col gap-2">
+          <h1 class="text-5xl font-bold">Well, hello there!</h1>
+          <h4 class="text-xl">
+            Software developer who also loves to design and build things. Always
+            trying new technologies and learning new skills.
+          </h4>
+        </div>
+        <div class="text-9xl">👋</div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h2 class="font-bold text-xl">About</h2>
+        <p>
+          Start his career in 2019 after completing a bootcamp for fullstack
+          developer. Now, working on a corporate while also joined a community
+          to build things.
+        </p>
+      </div>
+    </section>
+
+    <Experience />
+    <Education />
+  </div>
+  <Button
+    id="about-seemore"
+    className="w-fit mx-auto text-orange-500"
+    variant="ghost">See More</Button
+  >
+</div>
+
+<script is:inline>
+  let openAbout = false;
+  const about = document.getElementById("about");
+  const aboutSection = document.getElementById("about-section");
+  const defaultAboutHeight = aboutSection.clientHeight + 100 + "px";
+  // const defaultAboutHeight = "auto";
+  about.style.height = defaultAboutHeight;
+
+  const aboutSeeMore = document.getElementById("about-seemore");
+  aboutSeeMore.addEventListener("click", () => {
+    if (openAbout) {
+      about.style.height = defaultAboutHeight;
+      about.classList.add(
+        "[mask-image:linear-gradient(to_top,transparent_0%,#000_50%)]",
+      );
+      aboutSeeMore.innerHTML = "See More";
+    } else {
+      about.style.height = "auto";
+      about.classList.remove(
+        "[mask-image:linear-gradient(to_top,transparent_0%,#000_50%)]",
+      );
+      aboutSeeMore.innerHTML = "See Less";
+    }
+    openAbout = !openAbout;
+  });
+</script>

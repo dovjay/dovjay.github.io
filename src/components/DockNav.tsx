@@ -93,14 +93,14 @@ const DATA = {
 export function DockNav() {
   return (
     <TooltipProvider>
-        <Dock direction="middle">
-          {DATA.contact.social.map((social) => (
-          <DockIcon>
+      <Dock direction="middle">
+        {DATA.contact.social.map((social, i) => (
+          <DockIcon key={i}>
             <social.icon className="size-6" />
           </DockIcon>
-          ))}
-          <ModeToggle />
+        ))}
+        <ModeToggle />
       </Dock>
-      </TooltipProvider>
+    </TooltipProvider>
   );
 }

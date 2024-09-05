@@ -1,0 +1,25 @@
+---
+import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import { Experiences } from "@/constants/Experiences";
+import { Certificates } from "@/constants/Educations";
+import Heading from "@/components/Heading.astro";
+
+const allSkill = [
+  ...new Set([
+    ...Experiences.map((exp) => exp.skills),
+    ...Certificates.map((cert) => cert.skills),
+  ]),
+]
+  .flat()
+  .join(" ");
+---
+
+<section class="flex flex-col gap-2 items-center">
+  <Heading>Tech Stacks</Heading>
+  <VelocityScroll
+    text={allSkill}
+    default_velocity={0.25}
+    className="font-display text-center text-2xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-6xl md:leading-snug"
+    client:load
+  />
+</section>
