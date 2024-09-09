@@ -1,7 +1,6 @@
 ---
-import { DownloadIcon } from "lucide-react";
+import DownloadCV from "./DownloadCV";
 import HyperText from "./magicui/hyper-text";
-import { Button } from "./ui/button";
 
 const NavLinks = [
   {
@@ -22,13 +21,19 @@ const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <nav
-  class="flex flex-col justify-between h-screen px-2 py-5 sticky top-0 self-start max-sm:hidden items-center bg-background"
+  class="flex flex-col justify-between h-screen px-2 py-5 -mt-5 sticky top-0 self-start max-sm:hidden items-center bg-background"
 >
-  <div class="flex flex-col gap-2">
-    <div class="w-16 aspect-square bg-neutral-500 rounded-xl"></div>
+  <div class="flex flex-col gap-2 group">
+    <img
+      class="w-16 aspect-square bg-neutral-500 rounded-xl rotate-90 mix-blend-luminosity group-hover:mix-blend-normal group-hover:rotate-0 transition-all"
+      src="/images/profile/KessokuPortrait.JPG"
+    />
     <div class="flex justify-center">
       <h4 class="" style="writing-mode: vertical-lr;">dovjay/vaust</h4>
-      <h3 class="font-bold text-xl" style="writing-mode: vertical-lr;">
+      <h3
+        class="font-bold text-xl group-hover:text-pink-400"
+        style="writing-mode: vertical-lr;"
+      >
         Dovan Sanjaya
       </h3>
     </div>
@@ -54,9 +59,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       ))
     }
   </div>
-  <Button variant="ghost" className="rounded-full p-2">
-    <DownloadIcon />
-  </Button>
+  <DownloadCV client:load />
 </nav>
 
 <script is:inline></script>

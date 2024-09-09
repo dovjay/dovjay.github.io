@@ -1,5 +1,38 @@
 ---
-const { blogData } = Astro.props;
+const { blogPost } = Astro.props;
+const { Content } = await blogPost.render();
 ---
 
-{JSON.stringify(blogData)}
+<a
+  href={`/blogs/${blogPost.slug}`}
+  class="hover:bg-neutral-100 group transition rounded-lg overflow-clip dark:hover:bg-neutral-900"
+>
+  <div
+    class="border-foreground/25 h-32 flex col-span-2 lg:col-span-1 p-3 gap-3"
+  >
+    {
+      blogPost.data.cover && (
+        <div class="relative h-full">
+          <img
+            src={blogPost.data.cover}
+            alt={blogPost.data.title}
+            class="object-cover h-full rounded"
+          />
+          <div class="absolute w-full h-full bg-black/25 top-0 flex justify-center items-center group-hover:opacity-100 opacity-0 transition">
+            <p class="uppercase text-white text-center font-medium">Read Now</p>
+          </div>
+        </div>
+      )
+    }
+    <div class="flex flex-col gap-3 w-full">
+      <div class="flex justify-between flex-wrap">
+        <h2 class="font-bold text-xl">{blogPost.data.title}</h2>
+        <p>{blogPost.data.publishDate.toLocaleDateString()}</p>
+      </div>
+      <div class="line-clamp-2">
+        <!-- <Content /> -->
+        {blogPost.body}
+      </div>
+    </div>
+  </div>
+</a>

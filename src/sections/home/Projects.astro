@@ -1,73 +1,22 @@
 ---
-import {
-  CalendarIcon,
-  FileTextIcon,
-  GlobeIcon,
-  TextSearchIcon,
-} from "lucide-react";
-
+import Heading from "@/components/Heading.astro";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 
-const features = [
-  {
-    Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
-    href: "/",
-    cta: "Learn more",
-    background:
-      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "col-span-3 lg:col-span-1",
-  },
-  {
-    Icon: TextSearchIcon,
-    name: "Full text search",
-    description: "Search through all your files in one place.",
-    href: "/",
-    cta: "Learn more",
-    background:
-      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "col-span-3 lg:col-span-2",
-  },
-  {
-    Icon: GlobeIcon,
-    name: "Multilingual",
-    description: "Supports 100+ languages and counting.",
-    href: "/",
-    cta: "Learn more",
-    background:
-      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "col-span-3 lg:col-span-2",
-  },
-  {
-    Icon: CalendarIcon,
-    name: "Calendar",
-    description: "Use the calendar to filter your files by date.",
-    href: "/",
-    cta: "Learn more",
-    background:
-      "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    className: "col-span-3 lg:col-span-1",
-  },
-];
+import { ProjectsData } from "@/constants/Projects";
 ---
 
 <section class="flex flex-col gap-8 items-center">
   <div class="flex flex-col gap-2">
-    <h1
-      class="bg-black rounded-lg px-3 py-1 text-sm text-background w-fit mx-auto"
-    >
-      Projects
-    </h1>
+    <Heading>Projects</Heading>
     <h2 class="text-center text-5xl tracking-tight font-bold">
       Check out my latest work
     </h2>
     <h3 class="text-center text-2xl">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi officiis
-      labore harum voluptatibus, consequatur voluptatem dolorum at odi.
+      Whether it be a hobby project or a full time job. I put it all here. Feel
+      free to check it if you're interested.
     </h3>
   </div>
   <BentoGrid>
-    {features.map((feature) => <BentoCard {...feature} />)}
+    {ProjectsData.map((project) => <BentoCard {...project} />)}
   </BentoGrid>
 </section>
