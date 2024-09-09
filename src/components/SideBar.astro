@@ -1,7 +1,6 @@
 ---
-import { DownloadIcon } from "lucide-react";
+import DownloadCV from "./DownloadCV";
 import HyperText from "./magicui/hyper-text";
-import { Button } from "./ui/button";
 
 const NavLinks = [
   {
@@ -60,9 +59,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       ))
     }
   </div>
-  <Button variant="ghost" className="rounded-full p-2">
-    <DownloadIcon />
-  </Button>
+  <DownloadCV client:load />
 </nav>
 
 <script is:inline></script>

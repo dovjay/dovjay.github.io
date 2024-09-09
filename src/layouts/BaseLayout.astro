@@ -10,7 +10,25 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" />
     <title>{title}</title>
+    <script>
+      (function () {
+        const theme = document.cookie
+          .split("; ")
+          .find((row) => row.startsWith("theme="))
+          ?.split("=")[1];
+        if (
+          theme === "dark" ||
+          (theme === "system" &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
   <body>
     <main class="container mx-auto pt-16 pb-40">

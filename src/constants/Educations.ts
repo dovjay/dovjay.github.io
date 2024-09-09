@@ -1,5 +1,10 @@
 export const Educations = [
   {
+    school: "Hacktiv8 Indonesia",
+    duration: "2019",
+    degree: "Bootcamp, Fullstack Developer",
+  },
+  {
     school: "SMA N 1 Way Jepara",
     duration: "2015 - 2018",
     degree: "Highschool, Science",

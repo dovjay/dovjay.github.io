@@ -1,15 +1,6 @@
 import React from "react";
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { CalendarIcon, MailIcon } from "lucide-react";
+import { InstagramIcon } from "lucide-react";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { ModeToggle } from "@/components/ModeToggle";
 
@@ -59,48 +50,40 @@ const Icons = {
   ),
 };
 
-const DATA = {
-  navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
-  ],
-  contact: {
-    social: [
-      {
-        name: "GitHub",
-        url: "#",
-        icon: Icons.github,
-      },
-      {
-        name: "LinkedIn",
-        url: "#",
-        icon: Icons.linkedin,
-      },
-      {
-        name: "X",
-        url: "#",
-        icon: Icons.x,
-      },
-      {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-      },
-    ],
+const SocialMedia = [
+  {
+    name: "GitHub",
+    url: "//github.com/dovjay",
+    icon: Icons.github,
   },
-};
+  {
+    name: "LinkedIn",
+    url: "//linkedin.com/in/dovan-sanjaya",
+    icon: Icons.linkedin,
+  },
+  {
+    name: "Instagram",
+    url: "//instagram.com/dovan_sanjaya",
+    icon: InstagramIcon,
+  },
+  {
+    name: "Send Email",
+    url: "mailto:dovansanjaya24@gmail.com",
+    icon: Icons.email,
+  },
+];
 
 export function DockNav() {
   return (
-    <TooltipProvider>
-      <Dock direction="middle">
-        {DATA.contact.social.map((social, i) => (
-          <DockIcon key={i}>
+    <Dock direction="middle">
+      {SocialMedia.map((social, i) => (
+        <DockIcon key={i}>
+          <a href={social.url} target="_blank">
             <social.icon className="size-6" />
-          </DockIcon>
-        ))}
-        <ModeToggle />
-      </Dock>
-    </TooltipProvider>
+          </a>
+        </DockIcon>
+      ))}
+      <ModeToggle />
+    </Dock>
   );
 }
