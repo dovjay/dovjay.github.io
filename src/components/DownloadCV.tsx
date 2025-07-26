@@ -12,12 +12,17 @@ export default function DownloadCV() {
     <TooltipProvider>
       <Tooltip delayDuration={0}>
         <TooltipTrigger asChild>
-          <Button variant="ghost" className="rounded-full p-2">
-            <DownloadIcon />
-          </Button>
+          <a
+            href="https://drive.google.com/file/d/1JJXY6dPlv3enEXnnvUANnXVafQ2ApE8q/view?usp=sharing"
+            target="_blank"
+          >
+            <Button variant="ghost" className="rounded-full p-2">
+              <DownloadIcon />
+            </Button>
+          </a>
         </TooltipTrigger>
         <TooltipContent> Download CV </TooltipContent>
       </Tooltip>
     </TooltipProvider>
-  )
+  );
 }
