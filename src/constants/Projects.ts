@@ -2,6 +2,16 @@ import { CalendarIcon, FileTextIcon, GlobeIcon, TextSearchIcon } from "lucide-re
 
 export const ProjectsData = [
   {
+    Icon: CalendarIcon,
+    name: "Workace",
+    description: "A platform to search consultant for your project or be one",
+    href: "//workace.io",
+    cta: "Learn more",
+    background:
+      "/images/projects/workace.png",
+    className: "col-span-3 lg:col-span-3",
+  },
+  {
     Icon: GlobeIcon,
     name: "This Site",
     description: "Choose to try the new Astro framework and love it",
