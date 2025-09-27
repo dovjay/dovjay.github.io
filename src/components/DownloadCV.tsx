@@ -13,7 +13,7 @@ export default function DownloadCV() {
       <Tooltip delayDuration={0}>
         <TooltipTrigger asChild>
           <a
-            href="https://drive.google.com/file/d/1JJXY6dPlv3enEXnnvUANnXVafQ2ApE8q/view?usp=sharing"
+            href="https://drive.google.com/file/d/1a8MQxOR6ByElUKpg5ytTcgNN6FSzevHa/view?usp=drive_link"
             target="_blank"
           >
             <Button variant="ghost" className="rounded-full p-2">

@@ -1,5 +1,19 @@
 export const Experiences = [
   {
+    duration: "September 2025 - Present",
+    company: "Earth Hero (Volunteer)",
+    position: "Web Developer",
+    logo: "/images/company/earthhero.png",
+    skills: ["React", "Tailwind", "Next.js", "TypeScript", "Firebase"],
+    projects: [
+      {
+        name: "Earth Hero Website",
+        link: "//earthhero.org",
+        description: "Build the website for Earth Hero to promote the organization and its activities.",
+      },
+    ],
+  },
+  {
     duration: "Januari 2024 - Present",
     company: "Nirwana Textile",
     position: "Frontend Developer | UI/UX Designer",

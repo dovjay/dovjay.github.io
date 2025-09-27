@@ -29,7 +29,7 @@ import { Building2Icon } from "lucide-react";
               <li class="list-disc list-inside mb-4 last:mb-2">
                 <a
                   class={
-                    "font-bold text-lg " +
+                    "font-bold " +
                     (project.link
                       ? "hover:underline hover:text-blue-500 transition group"
                       : "pointer-events-none")
@@ -42,7 +42,7 @@ import { Building2Icon } from "lucide-react";
                     <ExternalLinkIcon className="group-hover:opacity-100 group-hover:translate-x-0 -translate-x-4 opacity-0 transition inline ml-2 text-blue-500" />
                   )}
                 </a>
-                <p>{project.description}</p>
+                <p class="text-sm">{project.description}</p>
               </li>
             ))}
           </ul>
