@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 
 export const getStaticPaths = (async () => {
   const blogEntries = await getCollection("blog");
@@ -9,8 +9,9 @@ export const getStaticPaths = (async () => {
     props: { entry },
   }));
 }) satisfies GetStaticPaths;
-const { entry }: { entry: any } = Astro.props;
-const { Content } = await entry.render();
+const { entry } = Astro.props;
+// const { Content } = () => "test";
 ---
 
-<Content />
+<!-- <Content /> -->
+<p>test</p>

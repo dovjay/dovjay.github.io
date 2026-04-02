@@ -1,10 +1,9 @@
 ---
 const { blogPost } = Astro.props;
-const { Content } = await blogPost.render();
 ---
 
 <a
-  href={`/blogs/${blogPost.slug}`}
+  href={`/blogs/${blogPost.id}`}
   class="hover:bg-neutral-100 group transition rounded-lg overflow-clip dark:hover:bg-neutral-900"
 >
   <div
