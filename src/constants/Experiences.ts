@@ -18,7 +18,7 @@ export const Experiences = [
     company: "Nirwana Textile",
     position: "Frontend Developer | UI/UX Designer",
     logo: "/images/company/Logo Nirwana.png",
-    skills: ["React", "Tailwind", "Next.js", "Figma", "Remix", "TypeScript", "Tanstack Query", "Expo"],
+    skills: ["React", "Tailwind", "Next.js", "Figma", "Remix", "TypeScript", "Tanstack Query", "Expo", "N8N", "Metabase"],
     projects: [
       {
         name: "Nirwana Textile Gateway",
@@ -31,19 +31,19 @@ export const Experiences = [
         description: "Design and create new landing page for better SEO and good user experience to see any available product. Build with Remix at first, but then rewrite the whole code with Next.js for better performance and maintainability.",
       },
       {
-        name: "Nirwana Textile Hub",
-        link: "//hub.nirwanatextile.com",
-        description: "Transitional web from social media to any existing ecosystem in Nirwana Textile. Completely rewrite the whole thing with new design and improved user experience.",
-      },
-      {
         name: "Nirwana Textile Queue",
         link: "//antrian.nirwanatextile.com",
         description: "Specifically created for tracking customer order queue while also promoting and educating the customer about the products using video content from company's social media.",
       },
       {
-        name: "ELBE",
-        link: "https://play.google.com/store/apps/details?id=com.dovjaystudio.elbe&hl=en",
-        description: "A side project, E-LKPD Science Based on Ethnoscience is an education app for children. Made using Expo React Native."
+        name: "Nirwana Textile Automation System",
+        link: "//n8n.nirwanatextile.com",
+        description: "Automate the workflow of the company using n8n. Integrate with Google Sheets, Gmail, and other services to automate the process of order tracking, customer communication, and inventory management.",
+      },
+      {
+        name: "Nirwana Textile Data Dashboard",
+        link: "//metabase.nirwanatextile.com",
+        description: "Create a dashboard to visualize the data of the company using Metabase. Integrate with Google Sheets and other services to visualize the sales data, customer data, and other relevant data for the company.",
       },
     ],
   },

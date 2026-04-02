@@ -1,4 +1,4 @@
-import { CalendarIcon, FileTextIcon, GlobeIcon, TextSearchIcon } from "lucide-react";
+import { CalendarIcon, FileTextIcon, GlobeIcon, MusicIcon, StethoscopeIcon, TextSearchIcon } from "lucide-react";
 
 export const ProjectsData = [
   {
@@ -7,6 +7,7 @@ export const ProjectsData = [
     description: "Choose to try the new Astro framework and love it",
     href: "/",
     cta: "You`re here!",
+    skills: ["Astro", "Tailwind", "TypeScript", "React"],
     background:
       "https://images.unsplash.com/photo-1715465115594-015eff1c7ec5?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     className: "col-span-3 lg:col-span-1",
@@ -19,6 +20,7 @@ export const ProjectsData = [
     cta: "Learn more",
     background:
       "/images/projects/gateway-nirwanatextile.png",
+    skills: ["React", "Tailwind", "Next.js", "Ant Design", "Tanstack Query"],
     className: "col-span-3 lg:col-span-2",
   },
   {
@@ -29,6 +31,7 @@ export const ProjectsData = [
     cta: "Learn more",
     background:
       "/images/projects/nirwanatextile.png",
+    skills: ["React", "Tailwind", "Next.js", "Remix", "TypeScript", "Tanstack Query"],
     className: "col-span-3 lg:col-span-2",
   },
   {
@@ -39,6 +42,29 @@ export const ProjectsData = [
     cta: "Learn more",
     background:
       "/images/projects/elbe.png",
+    skills: ["Expo", "React Native", "TypeScript"],
     className: "col-span-3 lg:col-span-1",
+  },
+  {
+    Icon: MusicIcon,
+    name: "Vocalochart",
+    description: "Automatically update popular vocaloid songs chart to Youtube Playlist",
+    href: "//www.youtube.com/@vocalochart",
+    cta: "Learn more",
+    background:
+      "/images/projects/vocalochart.png",
+    skills: ["React", "Next.js", "TypeScript", "Vercel"],
+    className: "col-span-3 lg:col-span-1",
+  },
+  {
+    Icon: StethoscopeIcon,
+    name: "Otsuka ILMU",
+    description: "Health education platform for professionals",
+    href: "//otsukailmu.id",
+    cta: "Learn more",
+    background:
+      "/images/projects/otsukailmu.png",
+    skills: ["React", "Next.js", "Express", "TypeScript", "Tailwind"],
+    className: "col-span-3 lg:col-span-2",
   },
 ];

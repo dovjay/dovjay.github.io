@@ -2,12 +2,14 @@
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { Experiences } from "@/constants/Experiences";
 import { Certificates } from "@/constants/Educations";
+import { ProjectsData } from "@/constants/Projects";
 import Heading from "@/components/Heading.astro";
 
 const allSkill = [
   ...new Set([
     ...Experiences.map((exp) => exp.skills),
     ...Certificates.map((cert) => cert.skills),
+    ...ProjectsData.map((project) => project.skills),
   ]),
 ]
   .flat()
